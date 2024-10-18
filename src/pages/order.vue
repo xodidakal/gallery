@@ -92,7 +92,7 @@ export default {
 
         const submit = () => {
             // 그대로 state.form을 args에 담으면 참조값이 담기기 떄문에 state.form의 값도 같이 바뀌게 된다.
-            // JSON으로 형태로 만들고 다시한번 JSON으로 파싱하는 형태를 만들어 참조값의 연결고리를 끊는 작업을 한다.
+            // JSON으로 형태로 만들고 다시한번 JSON으로 파싱하는 형태를 만들어 참조값의 연결고리를 끊는 작업을 한다...
             const args = JSON.parse(JSON.stringify(state.form));
             args.items = JSON.stringify(state.items)
             axios.post("/api/orders", args).then(() => {
